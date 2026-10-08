@@ -1,7 +1,10 @@
 import compas
-from compas.scene import Scene
-from compas.geometry import Box, Sphere, Translation
 from compas.datastructures import Mesh
+from compas.geometry import Box
+from compas.geometry import Sphere
+from compas.geometry import Translation
+from compas.scene import Scene
+
 from compas_usd.conversions import stage_from_scene
 
 scene = Scene()

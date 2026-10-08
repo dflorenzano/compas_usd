@@ -1,41 +1,97 @@
-"""
-********************************************************************************
-compas_usd.conversions
-********************************************************************************
+"""Conversions between COMPAS objects and USD prims."""
 
-.. currentmodule:: compas_usd.conversions
-
-.. toctree::
-    :maxdepth: 2
-"""
-from __future__ import absolute_import
-
-from .geometry import prim_from_box, box_from_prim, prim_from_cylinder, prim_from_sphere, prim_from_mesh, prim_from_transformation, prim_default
 from .transformations import (
     gfmatrix4d_from_transformation,
     transformation_from_gfmatrix4d,
     gfvec3f_and_gfquatd_from_frame,
+    translate_and_orient_from_frame,
     xform_rotate_from_frame,
+    frame_and_scale_from_prim,
+    frame_and_scale_from_transformation,
+    transformation_from_xformable,
     apply_transformation_on_prim,
     apply_rotate_and_translate_on_prim,
-    frame_and_scale_from_prim,
 )
-from .scene import stage_from_scene
+from .geometry import (
+    prim_from_box,
+    box_from_prim,
+    prim_from_sphere,
+    sphere_from_prim,
+    prim_from_cylinder,
+    cylinder_from_prim,
+    prim_from_transformation,
+    prim_default,
+    prim_from_frame,
+    prim_from_mesh,
+    mesh_from_prim,
+    prim_from_polyline,
+    prim_from_polylines,
+    polylines_from_prim,
+    prim_from_points,
+    points_from_prim,
+    prim_from_pointcloud,
+    pointcloud_from_prim,
+    prim_from_nurbscurve,
+    nurbscurve_from_prim,
+    nurbscurve_parameters_from_prim,
+    prim_from_nurbssurface,
+    prim_from_surface,
+    nurbssurface_from_prim,
+    nurbssurface_parameters_from_prim,
+)
+from .primvars import set_primvar, get_primvars
+from .metadata import set_compas_metadata, get_compas_metadata, apply_compas_metadata
+from .reader import geometry_from_prim, iter_geometry
+from .scene import prim_from_geometry, stage_from_scene, prim_from_sceneobject, prim_from_item
+from .model import prim_from_model, prim_from_element
 
 __all__ = [
-    "prim_from_box",
-    "box_from_prim",
-    "prim_from_cylinder",
-    "prim_from_sphere",
-    "prim_from_mesh",
-    "prim_from_transformation",
-    "prim_default",
     "gfmatrix4d_from_transformation",
     "transformation_from_gfmatrix4d",
     "gfvec3f_and_gfquatd_from_frame",
+    "translate_and_orient_from_frame",
     "xform_rotate_from_frame",
+    "frame_and_scale_from_prim",
+    "frame_and_scale_from_transformation",
+    "transformation_from_xformable",
     "apply_transformation_on_prim",
     "apply_rotate_and_translate_on_prim",
-    "frame_and_scale_from_prim",
+    "prim_from_box",
+    "box_from_prim",
+    "prim_from_sphere",
+    "sphere_from_prim",
+    "prim_from_cylinder",
+    "cylinder_from_prim",
+    "prim_from_transformation",
+    "prim_default",
+    "prim_from_frame",
+    "prim_from_mesh",
+    "mesh_from_prim",
+    "prim_from_polyline",
+    "prim_from_polylines",
+    "polylines_from_prim",
+    "prim_from_points",
+    "points_from_prim",
+    "prim_from_pointcloud",
+    "pointcloud_from_prim",
+    "prim_from_nurbscurve",
+    "nurbscurve_from_prim",
+    "nurbscurve_parameters_from_prim",
+    "prim_from_nurbssurface",
+    "prim_from_surface",
+    "nurbssurface_from_prim",
+    "nurbssurface_parameters_from_prim",
+    "set_primvar",
+    "get_primvars",
+    "set_compas_metadata",
+    "get_compas_metadata",
+    "apply_compas_metadata",
+    "geometry_from_prim",
+    "iter_geometry",
+    "prim_from_geometry",
     "stage_from_scene",
+    "prim_from_sceneobject",
+    "prim_from_item",
+    "prim_from_model",
+    "prim_from_element",
 ]

@@ -2,13 +2,14 @@
 # https://github.com/kcoley/gltf2usd/blob/master/Source/_gltf2usd/usd_material.py
 # https://github.com/ColinKennedy/USD-Cookbook/blob/master/concepts/mesh_with_materials/python/material.py
 """
-import os
 
+import os
 from enum import Enum
+
 from pxr import Gf
 from pxr import Sdf
-from pxr import UsdShade
 from pxr import UsdGeom
+from pxr import UsdShade
 
 
 class AlphaMode(object):  # todo import from somewhere else?

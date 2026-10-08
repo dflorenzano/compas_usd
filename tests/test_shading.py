@@ -11,7 +11,7 @@ def attach_billboard(stage, root, name="card"):
     billboard.CreateFaceVertexCountsAttr([4])
     billboard.CreateFaceVertexIndicesAttr([0, 1, 2, 3])
     billboard.CreateExtentAttr([(-430, -145, 0), (430, 145, 0)])
-    texCoords = billboard.CreatePrimvar("st", Sdf.ValueTypeNames.TexCoord2fArray, UsdGeom.Tokens.varying)
+    texCoords = UsdGeom.PrimvarsAPI(billboard).CreatePrimvar("st", Sdf.ValueTypeNames.TexCoord2fArray, UsdGeom.Tokens.varying)
     texCoords.Set([(0, 0), (1, 0), (1, 1), (0, 1)])
     return billboard
 
@@ -37,7 +37,7 @@ def attach_texture(stage, shader, material_path, reader_name="stReader", shader_
     return reader
 
 
-def test_shading():
+def test_shading(tmp_path):
     stage = Usd.Stage.CreateInMemory()
     UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
     root = UsdGeom.Xform.Define(stage, "/TexModel")
@@ -51,5 +51,5 @@ def test_shading():
     st_input.Set("st")
     reader.CreateInput("varname", Sdf.ValueTypeNames.Token).ConnectToSource(st_input)
     UsdShade.MaterialBindingAPI(billboard).Bind(material)
-    filename = os.path.join(BASE_FOLDER, "fixtures", "test1.usda")
+    filename = os.path.join(str(tmp_path), "test1.usda")
     stage.Export(filename)

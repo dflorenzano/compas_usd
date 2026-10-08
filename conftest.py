@@ -1,36 +1,29 @@
-import pytest
-import compas
-import compas_usd
 import math
-import numpy
 
+import compas
+import pytest
+from compas.datastructures import Mesh
+from compas.geometry import Box
+from compas.geometry import Frame
+from compas.geometry import Point
+from compas.geometry import Polyline
+from compas.geometry import Sphere
+from compas.geometry import Transformation
+from pxr import Usd
 
-def pytest_ignore_collect(path):
-    if "rhino" in str(path):
-        return True
-
-    if "blender" in str(path):
-        return True
-
-    if "ghpython" in str(path):
-        return True
-
-
-@pytest.fixture(autouse=True)
-def add_compas(doctest_namespace):
-    doctest_namespace["compas"] = compas
+import compas_usd
 
 
 @pytest.fixture(autouse=True)
-def add_compas_usd(doctest_namespace):
-    doctest_namespace["compas_usd"] = compas_usd
-
-
-@pytest.fixture(autouse=True)
-def add_math(doctest_namespace):
+def add_doctest_namespace(doctest_namespace):
     doctest_namespace["math"] = math
-
-
-@pytest.fixture(autouse=True)
-def add_np(doctest_namespace):
-    doctest_namespace["np"] = numpy
+    doctest_namespace["compas"] = compas
+    doctest_namespace["compas_usd"] = compas_usd
+    doctest_namespace["Mesh"] = Mesh
+    doctest_namespace["Box"] = Box
+    doctest_namespace["Frame"] = Frame
+    doctest_namespace["Point"] = Point
+    doctest_namespace["Polyline"] = Polyline
+    doctest_namespace["Sphere"] = Sphere
+    doctest_namespace["Transformation"] = Transformation
+    doctest_namespace["stage"] = Usd.Stage.CreateInMemory()

@@ -1,2 +1,2 @@
-usd-core
-compas >= 2.0
+compas >=2.4
+usd-core >=24.5

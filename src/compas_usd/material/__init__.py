@@ -8,6 +8,7 @@ compas_usd.material
 .. toctree::
     :maxdepth: 2
 """
+
 from __future__ import absolute_import
 
 from .material import USDMaterial

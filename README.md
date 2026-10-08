@@ -1,8 +1,26 @@
 # COMPAS USD
 
-COMPAS wrapper for USD (Universal Scene Description)
+COMPAS wrapper for [OpenUSD](https://openusd.org) (Universal Scene Description).
 
-Provides: 
+- Two-way conversions between COMPAS geometry and USD prims (meshes, polylines, points, primitives, NURBS, transformations)
+- Stage conventions (up axis, `metersPerUnit`, default prim)
+- COMPAS identity and attributes in `customData`; per-element data as primvars
+- Export of `compas.scene.Scene` and `compas_model` models
+- USD materials (`UsdPreviewSurface`, MDL)
 
-    * Conversions between COMPAS geometry and USD prims
-    * Conversions between COMPAS and USD material
+## Installation
+
+```bash
+pip install -e .
+```
+
+For development:
+
+```bash
+pip install -e ".[dev]"
+invoke test
+```
+
+## Documentation
+
+See `docs/` ([Conventions](docs/conventions.md), [Examples](docs/examples.md)).

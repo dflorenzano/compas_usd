@@ -1,7 +1,7 @@
 from pxr import Gf
-from pxr import Vt
 from pxr import Usd
 from pxr import UsdGeom
+from pxr import Vt
 
 stage = Usd.Stage.CreateInMemory()
 UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)

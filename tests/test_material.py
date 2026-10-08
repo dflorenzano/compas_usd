@@ -4,7 +4,6 @@ import pytest
 from pxr import Usd
 
 from compas_usd.material import USDMaterial
-from compas_usd.material import USDPreviewSurface
 
 BASE_FOLDER = os.path.dirname(__file__)
 

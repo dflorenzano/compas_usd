@@ -1,23 +1,19 @@
-"""
-********************************************************************************
-compas_usd
-********************************************************************************
-
-.. currentmodule:: compas_usd
-
-
-.. toctree::
-    :maxdepth: 1
-
-    compas_usd.conversions
-"""
-
-from __future__ import print_function
+"""COMPAS wrapper for USD (Universal Scene Description)."""
 
 import os
 
+from .stage import (
+    METERS_PER_UNIT,
+    create_stage,
+    meters_per_unit_from_unit,
+    unit_from_meters_per_unit,
+    stage_unit,
+    unit_scale,
+    make_valid_identifier,
+    unique_child_path,
+)
 
-__author__ = ["Romana Rust"]
+__author__ = ["Romana Rust", "Daniele Florenzano"]
 __copyright__ = "Gramazio Kohler Research - ETH Zurich"
 __license__ = "MIT License"
 __email__ = "rust@arch.ethz.ch"
@@ -32,4 +28,17 @@ DOCS = os.path.abspath(os.path.join(HOME, "docs"))
 TEMP = os.path.abspath(os.path.join(HOME, "temp"))
 
 
-__all__ = ["HOME", "DATA", "DOCS", "TEMP"]
+__all__ = [
+    "HOME",
+    "DATA",
+    "DOCS",
+    "TEMP",
+    "METERS_PER_UNIT",
+    "create_stage",
+    "meters_per_unit_from_unit",
+    "unit_from_meters_per_unit",
+    "stage_unit",
+    "unit_scale",
+    "make_valid_identifier",
+    "unique_child_path",
+]
